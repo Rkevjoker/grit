@@ -1,0 +1,34 @@
+﻿@model List<GritPerson.Models.titulo_libro>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Libros</h2>
+
+<table class="table">
+    <thead>
+        <th>Nombre</th>
+        <th>Año</th>
+        <th>Descripcion</th>
+        <th>Autor</th>
+        <th>Idioma</th>
+        <th>Saga</th>
+        <th>Editorial</th>
+        <th>@Html.ActionLink("Agregar","Create", null, htmlAttributes: new { @class="btn btn-sm btn-dark"})</th>
+    </thead>
+    <tbody>
+        @foreach (var L in Model)
+            {
+                <tr>
+                    <td>@L.Nombre</td>
+                    <td>@L.Año_edicion</td>
+                    <td>@L.descripcion</td>
+                    <td>@L.Autor.Nombre_autor</td>
+                    <td>@L.Idioma.idioma1</td>
+                    <td>@L.Saga.saga1</td>
+                    <td>@L.Editorial.Nombre</td>
+                </tr>
+            }
+    </tbody>
+</table>

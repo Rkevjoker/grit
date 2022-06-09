@@ -1,0 +1,35 @@
+﻿@model GritPerson.Models.titulo_libro
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Libros", FormMethod.Post))
+{
+    <p>Fecha libro(año,mes,dia)</p>
+    @Html.TextBoxFor(model => model.Año_edicion)
+    <p>Descripcion(Novela)</p>
+    @Html.TextBoxFor(model => model.descripcion)
+    <p>Id Autor</p>
+    @Html.TextBoxFor(model => model.Id_autor)
+    <p>Id Genero</p>
+    @Html.TextBoxFor(model => model.Id_genero)
+    <p>Id Idioma(1=Español,2=Ingles,3=Frances)</p>
+    @Html.TextBoxFor(model => model.Id_idioma)
+    <p>Id Saga(1-7)</p>
+    @Html.TextBoxFor(model => model.Id_saga)
+    <p>Id Editorial</p>
+    @Html.TextBoxFor(model => model.Id_editorial)
+    <p>Nombre</p>
+    @Html.TextBoxFor(model => model.Nombre)
+
+    <input type="submit" class="btn btn-sm btn-outline-dark">
+    <th>@Html.ActionLink("Ver listado", "Index", null, htmlAttributes: new { @class = "btn btn-sm btn-dark" })</th>
+
+
+
+
+
+
+}

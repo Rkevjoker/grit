@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GritPersonModelStoreContainer" CdmEntityContainer="GritPersonEntities1">
+    <EntitySetMapping Name="Autor">
+      <EntityTypeMapping TypeName="GritPersonModel.Autor">
+        <MappingFragment StoreEntitySet="Autor">
+          <ScalarProperty Name="Id_autor" ColumnName="Id_autor" />
+          <ScalarProperty Name="Nombre_autor" ColumnName="Nombre_autor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Editorial">
+      <EntityTypeMapping TypeName="GritPersonModel.Editorial">
+        <MappingFragment StoreEntitySet="Editorial">
+          <ScalarProperty Name="Id_editorial" ColumnName="Id_editorial" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="genero">
+      <EntityTypeMapping TypeName="GritPersonModel.genero">
+        <MappingFragment StoreEntitySet="genero">
+          <ScalarProperty Name="Id_genero" ColumnName="Id_genero" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Idioma">
+      <EntityTypeMapping TypeName="GritPersonModel.Idioma">
+        <MappingFragment StoreEntitySet="Idioma">
+          <ScalarProperty Name="Id_idioma" ColumnName="Id_idioma" />
+          <ScalarProperty Name="idioma1" ColumnName="idioma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Saga">
+      <EntityTypeMapping TypeName="GritPersonModel.Saga">
+        <MappingFragment StoreEntitySet="Saga">
+          <ScalarProperty Name="Id_saga" ColumnName="Id_saga" />
+          <ScalarProperty Name="saga1" ColumnName="saga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="titulo_libro">
+      <EntityTypeMapping TypeName="GritPersonModel.titulo_libro">
+        <MappingFragment StoreEntitySet="titulo_libro">
+          <ScalarProperty Name="Id_titulo_libro" ColumnName="Id_titulo_libro" />
+          <ScalarProperty Name="Año_edicion" ColumnName="Año_edicion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="Id_autor" ColumnName="Id_autor" />
+          <ScalarProperty Name="Id_genero" ColumnName="Id_genero" />
+          <ScalarProperty Name="Id_idioma" ColumnName="Id_idioma" />
+          <ScalarProperty Name="Id_saga" ColumnName="Id_saga" />
+          <ScalarProperty Name="Id_editorial" ColumnName="Id_editorial" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="53839737a0b74c2ea90790a25ca1ad68" Name="Diagram1">
+        <EntityTypeShape EntityType="GritPersonModel.Autor" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GritPersonModel.Editorial" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GritPersonModel.genero" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GritPersonModel.Idioma" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GritPersonModel.Saga" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GritPersonModel.titulo_libro" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="GritPersonModel.FK__titulo_li__Id_au__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="GritPersonModel.FK__titulo_li__Id_ed__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="GritPersonModel.FK__titulo_li__Id_ge__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="GritPersonModel.FK__titulo_li__Id_id__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="GritPersonModel.FK__titulo_li__Id_sa__440B1D61" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

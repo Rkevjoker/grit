@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GritPersonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Autor">
+    <Key>
+      <PropertyRef Name="Id_autor" />
+    </Key>
+    <Property Name="Id_autor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_autor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="titulo_libro" Relationship="Self.FK__titulo_li__Id_au__412EB0B6" FromRole="Autor" ToRole="titulo_libro" />
+  </EntityType>
+  <EntityType Name="Editorial">
+    <Key>
+      <PropertyRef Name="Id_editorial" />
+    </Key>
+    <Property Name="Id_editorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="titulo_libro" Relationship="Self.FK__titulo_li__Id_ed__44FF419A" FromRole="Editorial" ToRole="titulo_libro" />
+  </EntityType>
+  <EntityType Name="genero">
+    <Key>
+      <PropertyRef Name="Id_genero" />
+    </Key>
+    <Property Name="Id_genero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Categoria" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="titulo_libro" Relationship="Self.FK__titulo_li__Id_ge__4222D4EF" FromRole="genero" ToRole="titulo_libro" />
+  </EntityType>
+  <EntityType Name="Idioma">
+    <Key>
+      <PropertyRef Name="Id_idioma" />
+    </Key>
+    <Property Name="Id_idioma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idioma1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="titulo_libro" Relationship="Self.FK__titulo_li__Id_id__4316F928" FromRole="Idioma" ToRole="titulo_libro" />
+  </EntityType>
+  <EntityType Name="Saga">
+    <Key>
+      <PropertyRef Name="Id_saga" />
+    </Key>
+    <Property Name="Id_saga" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="saga1" Type="Int32" />
+    <NavigationProperty Name="titulo_libro" Relationship="Self.FK__titulo_li__Id_sa__440B1D61" FromRole="Saga" ToRole="titulo_libro" />
+  </EntityType>
+  <EntityType Name="titulo_libro">
+    <Key>
+      <PropertyRef Name="Id_titulo_libro" />
+    </Key>
+    <Property Name="Id_titulo_libro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Año_edicion" Type="DateTime" Precision="0" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Id_autor" Type="Int32" />
+    <Property Name="Id_genero" Type="Int32" />
+    <Property Name="Id_idioma" Type="Int32" />
+    <Property Name="Id_saga" Type="Int32" />
+    <Property Name="Id_editorial" Type="Int32" />
+    <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Autor" Relationship="Self.FK__titulo_li__Id_au__412EB0B6" FromRole="titulo_libro" ToRole="Autor" />
+    <NavigationProperty Name="Editorial" Relationship="Self.FK__titulo_li__Id_ed__44FF419A" FromRole="titulo_libro" ToRole="Editorial" />
+    <NavigationProperty Name="genero" Relationship="Self.FK__titulo_li__Id_ge__4222D4EF" FromRole="titulo_libro" ToRole="genero" />
+    <NavigationProperty Name="Idioma" Relationship="Self.FK__titulo_li__Id_id__4316F928" FromRole="titulo_libro" ToRole="Idioma" />
+    <NavigationProperty Name="Saga" Relationship="Self.FK__titulo_li__Id_sa__440B1D61" FromRole="titulo_libro" ToRole="Saga" />
+  </EntityType>
+  <Association Name="FK__titulo_li__Id_au__412EB0B6">
+    <End Role="Autor" Type="Self.Autor" Multiplicity="0..1" />
+    <End Role="titulo_libro" Type="Self.titulo_libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Autor">
+        <PropertyRef Name="Id_autor" />
+      </Principal>
+      <Dependent Role="titulo_libro">
+        <PropertyRef Name="Id_autor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__titulo_li__Id_ed__44FF419A">
+    <End Role="Editorial" Type="Self.Editorial" Multiplicity="0..1" />
+    <End Role="titulo_libro" Type="Self.titulo_libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Editorial">
+        <PropertyRef Name="Id_editorial" />
+      </Principal>
+      <Dependent Role="titulo_libro">
+        <PropertyRef Name="Id_editorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__titulo_li__Id_ge__4222D4EF">
+    <End Role="genero" Type="Self.genero" Multiplicity="0..1" />
+    <End Role="titulo_libro" Type="Self.titulo_libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="genero">
+        <PropertyRef Name="Id_genero" />
+      </Principal>
+      <Dependent Role="titulo_libro">
+        <PropertyRef Name="Id_genero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__titulo_li__Id_id__4316F928">
+    <End Role="Idioma" Type="Self.Idioma" Multiplicity="0..1" />
+    <End Role="titulo_libro" Type="Self.titulo_libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Idioma">
+        <PropertyRef Name="Id_idioma" />
+      </Principal>
+      <Dependent Role="titulo_libro">
+        <PropertyRef Name="Id_idioma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__titulo_li__Id_sa__440B1D61">
+    <End Role="Saga" Type="Self.Saga" Multiplicity="0..1" />
+    <End Role="titulo_libro" Type="Self.titulo_libro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Saga">
+        <PropertyRef Name="Id_saga" />
+      </Principal>
+      <Dependent Role="titulo_libro">
+        <PropertyRef Name="Id_saga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GritPersonEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Autor" EntityType="Self.Autor" />
+    <EntitySet Name="Editorial" EntityType="Self.Editorial" />
+    <EntitySet Name="genero" EntityType="Self.genero" />
+    <EntitySet Name="Idioma" EntityType="Self.Idioma" />
+    <EntitySet Name="Saga" EntityType="Self.Saga" />
+    <EntitySet Name="titulo_libro" EntityType="Self.titulo_libro" />
+    <AssociationSet Name="FK__titulo_li__Id_au__412EB0B6" Association="Self.FK__titulo_li__Id_au__412EB0B6">
+      <End Role="Autor" EntitySet="Autor" />
+      <End Role="titulo_libro" EntitySet="titulo_libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__titulo_li__Id_ed__44FF419A" Association="Self.FK__titulo_li__Id_ed__44FF419A">
+      <End Role="Editorial" EntitySet="Editorial" />
+      <End Role="titulo_libro" EntitySet="titulo_libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__titulo_li__Id_ge__4222D4EF" Association="Self.FK__titulo_li__Id_ge__4222D4EF">
+      <End Role="genero" EntitySet="genero" />
+      <End Role="titulo_libro" EntitySet="titulo_libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__titulo_li__Id_id__4316F928" Association="Self.FK__titulo_li__Id_id__4316F928">
+      <End Role="Idioma" EntitySet="Idioma" />
+      <End Role="titulo_libro" EntitySet="titulo_libro" />
+    </AssociationSet>
+    <AssociationSet Name="FK__titulo_li__Id_sa__440B1D61" Association="Self.FK__titulo_li__Id_sa__440B1D61">
+      <End Role="Saga" EntitySet="Saga" />
+      <End Role="titulo_libro" EntitySet="titulo_libro" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
